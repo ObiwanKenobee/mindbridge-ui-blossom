@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                mindbridge: {
+                    lavender: '#E5DEFF',
+                    purple: '#D6BCFA',
+                    teal: '#D3E4FD',
+                    primary: '#9b87f5',
+                    secondary: '#7E69AB',
+                    tertiary: '#6E59A5',
+                    gray: '#8E9196',
+                    'soft-gray': '#F1F0FB'
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +95,32 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'pulse-slow': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.8' }
+                },
+                'bridge-connect': {
+                    '0%': { transform: 'translateX(-20%) scale(0.9)', opacity: '0.7' },
+                    '50%': { transform: 'translateX(-10%) scale(0.95)', opacity: '0.85' },
+                    '100%': { transform: 'translateX(0) scale(1)', opacity: '1' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'float': 'float 6s ease-in-out infinite',
+                'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+                'bridge-connect': 'bridge-connect 2s ease-out forwards'
+			},
+            fontFamily: {
+                'inter': ['Inter', 'sans-serif'],
+                'nunito': ['Nunito', 'sans-serif']
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
